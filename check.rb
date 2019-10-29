@@ -22,9 +22,12 @@ end
 if changed
   puts "changed!"
   pushed = new_data.select {|k, v| keys.include?(k)}
-  pushed["time"] = now
+  pushed["first_time"] = now
+  pushed["last_time"] = now
   data.push(pushed)
-  open(json_file_path, 'w') do |io|
-    io.write(JSON.pretty_generate(data))
-  end
+else
+  data[-1]["last_time"] = now
+end
+open(json_file_path, 'w') do |io|
+  io.write(JSON.pretty_generate(data, indent: '    '))
 end

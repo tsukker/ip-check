@@ -14,8 +14,7 @@ Make `log.json` and initialize as:
 [
   {
     "IP": "initial-IP",
-    "Hostname": "initial-Hostname",
-    "time": "initial-time"
+    "Hostname": "initial-Hostname"
   }
 ]
 ```
